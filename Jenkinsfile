@@ -1,10 +1,10 @@
 pipeline {
-    agent { docker { image 'node:6.3' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'yarn install && yarn run test'
-            }
-        }
+  agent any
+  stages {
+    stage('build') {
+      steps {
+        sh 'yarn install && yarn run test'
+      }
     }
+  }
 }
