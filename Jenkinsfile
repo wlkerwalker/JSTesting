@@ -6,6 +6,11 @@ pipeline {
         sh 'yarn install'
       }
     }
+    stage('sanity-check') {
+      steps {
+        input 'does this look ok to you?'
+      }
+    }
     stage('test') {
       steps {
         sh 'yarn run test'
